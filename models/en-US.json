@@ -1,47 +1,68 @@
 {
-    "interactionModel": {
-      "languageModel": {
-        "invocationName": "basic starter",
-        "types": [
-  
-        ],
-        "intents": [
-          {
-            "name": "AMAZON.CancelIntent",
-            "samples": [
-  
-            ]
-          },
-          {
-            "name": "AMAZON.HelpIntent",
-            "samples": [
-  
-            ]
-          },
-          {
-            "name": "AMAZON.StopIntent",
-            "samples": [
-  
-            ]
-          },
-          {
-            "name":"MyNameIsIntent",
-            "slots":[
-                {
-                    "name":"name",
-                    "type":"AMAZON.US_FIRST_NAME"
-                }
-            ],
-            "samples":[
-                "{name}",
-                "{name} is my name",
-                "my name is {name}",
-                "i am {name}",
-                "you can call me {name}"
-            ]
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "message sender",
+      "types": [
+        {
+          "name": "groupList",
+          "values": [
+              {
+                  "id": "All",
+                  "name": {
+                      "value": "all groups"
+                  }
+              }
+            ]   
         }
-        ]
-      }
+      ],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name":"MyQueryIntent",
+          "slots":[],
+          "samples":[
+              "send an emergency notification",
+              "want to send an emergency notification",
+              "I want to send an emergency notification",
+              "I would like to send an emergency notification"
+          ]
+        },
+        {
+          "name":"MyGroupListIntent",
+          "slots":[
+              {
+                  "name":"group_name",
+                  "type":"groupList"
+              }
+          ],
+          "samples":[
+              "{group_name}"
+          ]
+        }
+      ]
     }
   }
-  
+}

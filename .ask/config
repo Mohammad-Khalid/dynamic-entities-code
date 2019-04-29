@@ -8,7 +8,7 @@
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "ask-custom-basic-starter-default"
+                "uri": "message-sender-default"
               }
             }
           }
